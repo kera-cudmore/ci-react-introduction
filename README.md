@@ -1,6 +1,5 @@
-# React Project Example
+# ![Introduction to React Banner](documentation/banner.png)
 
-To use this repository:
-- Click the "Use this template" button in the upper right
-- Choose a name for your repository and create it
-- In your own repository, click the green "Gitpod" button
+This repository is a place for me to store my notes and thoughts on the introduction to React bonus content provided by the Code Institute.
+
+* Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
