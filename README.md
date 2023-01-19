@@ -6,6 +6,8 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 
 * [Lesson 1](#lesson-1---an-introduction-to-the-example-project)
 * [Lesson 2](#lesson-2---introduction-to-jsx)
+* [Lesson 3](#lesson-3---creating-your-first-react-app)
+* [Lesson 4](#lesson-4---react-developer-tools)
 
 ---
 
@@ -94,4 +96,27 @@ Custom JSX elements and the React components they represent must also be capital
 
 ---
 
-## Lesson 3 -
+## Lesson 3 - Creating your first React App
+
+In order to create our React app we need to couple it with [nodejs](https://nodejs.org/en/docs/). nodejs is an opensource JavaScript runtime and allows us to run our development server while we write React code and takes care of converting our React code to vanilla JavaScript to enable it to run in the browser. It allows us to use the Node Package Manage (NPM) to install packages and extensions for our React apps. We have already used one of these NPM commands in the first lesson: `npm start`. Node Package Manager is a tool that is distributed with nodejs to allow us to install and uninstall packages, run development servers and create and destroy React applications. It also allows us to use npx, which executes node packages.
+
+### Using GitPod
+
+1. Create a GitHub repository for your app.
+2. Use the green GitPod button on the repository page to open a GitPod workspace.
+3. As node is pre-installed in GitPod, we can use the command `npx create-react-app my-app-name-here --use-npm` to create the React application.
+
+    * The `create-react-app` tool is great as it gives us all the boilerplate code we need to start a React app. Many developers use this to get their apps running, and will then delete anything they don't need and make adjustments where necessary.
+
+    * We have used the `--use-npm` flag to ensure that we are using npm because we are creating the app in GitPod, which would by default use a different package manager called yarn.
+
+4. This can take several minutes to complete, but when done you will be able to see that npx has created a new React app in the my-app-name-here folder. Inside this folder will be a node_modules folder, which is where everything npm installs will be stored and is where the React app will look for any packages it needs.
+5. To run the app, first `cd` into the app and then run the command `npm start`. Now we have a React app ready for us to start creating our components.
+
+### Using VsCode
+
+Steps to be added at a later date.
+
+---
+
+## Lesson 4 - React Developer Tools
