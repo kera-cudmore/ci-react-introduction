@@ -8,6 +8,7 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 * [Lesson 2](#lesson-2---introduction-to-jsx)
 * [Lesson 3](#lesson-3---creating-your-first-react-app)
 * [Lesson 4](#lesson-4---react-developer-tools)
+* [Lesson 5](#lesson-5---react-components)
 
 ---
 
@@ -113,10 +114,24 @@ In order to create our React app we need to couple it with [nodejs](https://node
 4. This can take several minutes to complete, but when done you will be able to see that npx has created a new React app in the my-app-name-here folder. Inside this folder will be a node_modules folder, which is where everything npm installs will be stored and is where the React app will look for any packages it needs.
 5. To run the app, first `cd` into the app and then run the command `npm start`. Now we have a React app ready for us to start creating our components.
 
-### Using VsCode
-
-Steps to be added at a later date.
-
 ---
 
 ## Lesson 4 - React Developer Tools
+
+Google Developer Tools can be very useful when working with React apps. There is also a Chrome extension called [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) that can be downloaded from the Chrome webstone, which alows us to to examine and tweak React apps we're building, rather than the HMTL it generates. Once installed it can be pinned to the Chrome toolbar which will allow us easy access.
+
+The React developer tool is a great way to identify sites that are developed in React. The icon will highlighted as blue when viewing a site that uses React, and will be greyed out on ones that don't. If you inspect an element on a site using React, the components tab will automatically highlight the element you selected.
+
+Note: When viewing the components on the web remember that you are viewing the optimised production build, which minifies and compresses all component names to keep the JavaScript as small as possible. In development mode, you will be able to see the real component names.
+
+When viewing the components tab in developer tools you will be able to see the props (properties) on the right. This allows you while developing your own apps to see what properties your components currently have and how changes to the property affect the component.
+
+Another useful tool is component highlighting which can be found by clicking on the settings and then choosing highlight updates when components render. Doing this will show you how active a large scale site (such as Twitter, Facebook or Instagram) is under the surface. Each time a component rerenders and receives a new property or state, it will be highlighted. Rerenders can be caused by many things, like a mouse moving over an element, scrolling the page, clicking a link etc. When a component rerenders, its is similar to a page refresh, but just for that component. When sites get larger, these component rerenders can start to slow the site down if they are not optimised and are rerendering needlessly, and so this is another useful way to utilise the React developer tools.
+
+The React developer tools also have a Profiler tab which can be used to determine how long different components are taking to load and where optimisations could be possible.
+
+---
+
+## Lesson 5 - React Components
+
+
