@@ -134,4 +134,12 @@ The React developer tools also have a Profiler tab which can be used to determin
 
 ## Lesson 5 - React Components
 
+A React application is nothing more than a collection of components composed together to create a user interface. There are two main types of components:
 
+* Stateless Functional Components
+
+* Stateful Class Components
+
+**Further Reading:** [React Functional Components vs Class Components](https://articles.wesionary.team/react-functional-components-vs-class-components-86a2d2821a22)
+
+---
