@@ -4,11 +4,12 @@ This repository is a place for me to store my notes and thoughts on the introduc
 
 Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 
-* [Lesson 1](#lesson-1---an-introduction-to-the-example-project)
-* [Lesson 2](#lesson-2---introduction-to-jsx)
-* [Lesson 3](#lesson-3---creating-your-first-react-app)
-* [Lesson 4](#lesson-4---react-developer-tools)
-* [Lesson 5](#lesson-5---react-components)
+* [Lesson 1: An introduction to the example project](#lesson-1---an-introduction-to-the-example-project)
+* [Lesson 2: Introduction to JSX](#lesson-2---introduction-to-jsx)
+* [Lesson 3: Creating your first React App](#lesson-3---creating-your-first-react-app)
+* [Lesson 4: React developer tools](#lesson-4---react-developer-tools)
+* [Lesson 5: React components](#lesson-5---react-components)
+* [Lesson 6: Functional components](#lesson-6---functional-components)
 
 ---
 
@@ -153,5 +154,11 @@ React hooks are a newer React feature that allow us to use some features of each
 However it is still important to know how a stateful class component works, to be able to truely understand how hooks work using states.
 
 **Further Reading:** [React Functional Components vs Class Components](https://articles.wesionary.team/react-functional-components-vs-class-components-86a2d2821a22)
+
+---
+
+## Lesson 6 - Functional Components
+
+**[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/gitpod-react/tree/b73da3590fd4cb5101cf7c8470b63ee37f84840f/my-app/src)**
 
 ---
