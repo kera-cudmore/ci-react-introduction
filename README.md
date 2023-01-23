@@ -134,11 +134,23 @@ The React developer tools also have a Profiler tab which can be used to determin
 
 ## Lesson 5 - React Components
 
-A React application is nothing more than a collection of components composed together to create a user interface. There are two main types of components:
+This lesson uses the **[react-components](react-components/)** folder.
 
-* Stateless Functional Components
+A React application is a collection of components composed together to create a user interface. There are two main types of components: Stateless Functional Components & Stateful Class Components.
 
-* Stateful Class Components
+Inside the src/components folder are three components: FunctionalGreeting, HooksCounter and StatefulGreeting. Each of the components has been written in its own JavaScript file so that it can be reused as needed and is named using the PascalCase convention which allows React to be able to tell it apart from the standard HTML elements in the JSX.
+
+The first file, [FunctionalGreeting](react-components/src/components/FunctionalGreeting.js), is a stateless functional component. It is a JavaScript function that returns the HTML shown in the preview window. As it is a function, it is also able to take parameters. The standard for this type of component is to take a parameter called *props* (this is short for properties). This prop parameter contains the properties which determine what the component should display (render). In this example, props contains a name which is rendered as part of the JSX. The actual name comes from the name attribute, which is specified wherever we include the component. By using this prop we can use this component to render a greeting for any name we wish. However it is important to know with stateless functional components, once they've rendered their props, the output will always remain the same.
+
+The file [StatefulGreeting](react-components/src/components/StatefulGreeting.js) is an example of a stateful class component. While stateless functional components always remain the same once rendered, stateful class components are able to change. They do this by using the state, which is a JavaScript object that contains various properties.
+
+The initial state (the one values the state has the first time the component renders) are defined in the *constructor method*. For the example file the initial state provides the component with a state property called *count* that is initialised to 0. State properties can be accessed within the component by accessing *this.state* and can be changed at will, which means a stateful component is able to change at any time by updating their state. There are many things that can update a state, but it is usually a user interaction - like the button in our example. When we click the button, the setCount method is called which increments the count by one, and then rerenders the component with the new state, containing the new count. If we refresh the window the count is set back to 0 as defined in its initial state in the constructor. Stateful components are also able to take props.
+
+Which type of component is best to use? That will depend on their use case. It is generally preferred to use functional components as much as you can, and only to use class components when the component needs to have some sort of interactivity. Due to being less complex, functional components are good for static components that just need a few props to tell them what to render, and that won't change. However if you need to change the props or require any interactivity - stateful class components will suit your requirements better.
+
+React hooks are a newer React feature that allow us to use some features of each component type interchangably - so a built in React function that you can add to a stateless functional component that will allow it to behave like a stateful component. An example of this is shown in [HooksCounter](react-components/src/components/HooksCounter.js) which has the same functionality of the stateful class component, StatefulGreeting. This is due to the use of the useState hook, which allows us to give the functional component a state property called count, create a method to update it called setCount, provide an initial value of 0 and then call the method when the button is clicked. It provides the same functionality of the stateful component, just with a lot less code. For this reason, hooks are being used increasingly more as a replacement of stateful class components, due to them accomplishing the same task with less code, and without having to use the *this* keyword or constructor.
+
+However it is still important to know how a stateful class component works, to be able to truely understand how hooks work using states.
 
 **Further Reading:** [React Functional Components vs Class Components](https://articles.wesionary.team/react-functional-components-vs-class-components-86a2d2821a22)
 
