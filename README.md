@@ -10,6 +10,7 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 * [Lesson 4: React developer tools](#lesson-4---react-developer-tools)
 * [Lesson 5: React components](#lesson-5---react-components)
 * [Lesson 6: Functional components](#lesson-6---functional-components)
+* [Lesson 7: Props](#lesson-7---props)
 
 ---
 
@@ -159,6 +160,28 @@ However it is still important to know how a stateful class component works, to b
 
 ## Lesson 6 - Functional Components
 
+The outcome of these lessons, creating my first react app, are stored in the **[my-first-react-app](my-first-react-app/)** folder.
+
+The app function in [App.js](my-first-react-app/src/App.js) is itself a functional component, and because there is only one single root div in the [index.html](my-first-react-app/public/index.html), which is where this app component is rendered and where the whole app lives, we're going to use this component as a parent component and nest all other components inside it.
+
+To create a functional component from scratch:
+
+1. Create a folder in the *src* directory called *components* and then inside that create a file called *FunctionalGreeting.js* (Note: the PascalCase convention used to name the file - this is required for React components).
+2. Import React from react. Note that in the latest versions of React this step is not required - however we are adding it to make it clear what we are doing while learning. This will also ensure that our components are backwards compatible with earlier versions of React.
+3. Create the function that will return some HTML.
+4. The function won't currently do anything as it's not included in the rest of the application. To include it we will need to export the function from the current file and then import it where we want to use it, in this example the App.js file. This will then allow us to use the FunctionalGreeting component in App.js. This process of writing a component, exporting it and then importing it into the main App file is the basis of how user interfaces are created in React.
+5. In the App div we are now going to add the custom JSX element, FunctionalGreeting. As this component is totally independent and has no other content other than what it renders itself, it doesn't need a closing tag, so we can self close it with a space slash. (Some more advanced apps have components which wrap around other components, so these would require to be closed like you do other HTML elements with a closing tag.)
+
+To use more modern syntax, this function could be written as an arrow function instead, which makes the code cleaner and shorter (although this can also make code a bit harder to read at first until you get used to the shortened syntax).
+
+Both versions are in the file to allow comparison.
+
 **[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/gitpod-react/tree/b73da3590fd4cb5101cf7c8470b63ee37f84840f/my-app/src)**
+
+---
+
+## Lesson 7 - Props
+
+**[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/gitpod-react/tree/b7e7da047b80911501e57d6dfb9ae090ad4c5dee/my-app/src)**
 
 ---
