@@ -182,6 +182,47 @@ Both versions are in the file to allow comparison.
 
 ## Lesson 7 - Props
 
+Props can make our functional components more flexible and dynamic. Currently our component only renders the single greeting 'Hello from React'. We could add this component to our App several times, but it would always return the same greeting. If we wanted to be able to return different greetings, we would need to use props.
+
+Props is short for properties. Props are the parameter that are passed into the react component which tell it what to render and how.
+
+To show how props work, we will create a `FunctionalGreetingWithProps` component, change the greeting to hello and then import this into `App.js`. We will then add the component below our FunctionalGreeting component in the App return. We should be able to see this hello greeting in our preview.
+
+Note: As we are returning more than one component in the return, jsx requires that they are wrapped in a div. We used this div in the previous lesson with one component, which wasn't required - however if the return has more than one component, then it will be required.
+
+Props are specified as attributes to the component in the same was as attributes are specified in HTML (like class or id). The difference with React props is that you can call them anything you want, and specify as many as you want.
+
+To add the prop to our FunctionalGreetingWithProps component, we simply add the prop after the component name in App.js:
+
+```js
+<FunctionalGreetingWithProps greeting="Nice to meet you!"/>
+```
+
+We then need to retrieve the prop in the component, and render it as part of the JSX in FunctionalGreetingWithProps.js. We can do this by passing the props to the function which  will now exist as an object inside the function. 
+
+We can then check this by console logging the props. (As there are now multiple lines of code, we will need to open curly brackets and add a return for the jsx.)
+
+```js
+const FunctionalGreetingWithProps = (props) => {
+    console.log(props);
+    return <h1>Hello</h1>;
+}
+```
+
+![props console.log](documentation/props-console-log.png)
+
+To access this prop by injecting javascript code into the component using jsx. To do this we use the curly braces and then pass it `props.greeting`:
+
+```js
+return <h1>Hello, {props.greeting}</h1>;
+```
+
+We should now be able to see our greeting rendered in the preview. We can pass any type of prop, javascript variable or expression in the jsx by wrapping the javascript in the curly braces.
+
+If we wanted to add more than one prop, we simply separate them with a space. As our greeting component now accepts props we could render any greeting we wanted using this one component, or even add more props to make it more flexible.
+
+Props are used to determine what the component renders and how it renders it, for example what colour it should be, whether parts are disabled etc.
+
 **[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/gitpod-react/tree/b7e7da047b80911501e57d6dfb9ae090ad4c5dee/my-app/src)**
 
 ---
