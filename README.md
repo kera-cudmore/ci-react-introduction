@@ -182,6 +182,8 @@ Both versions are in the file to allow comparison.
 
 ## Lesson 7 - Props
 
+The outcome of these lessons, creating my first react app, are stored in the **[my-first-react-app](my-first-react-app/)** folder.
+
 Props can make our functional components more flexible and dynamic. Currently our component only renders the single greeting 'Hello from React'. We could add this component to our App several times, but it would always return the same greeting. If we wanted to be able to return different greetings, we would need to use props.
 
 Props is short for properties. Props are the parameter that are passed into the react component which tell it what to render and how.
@@ -224,5 +226,40 @@ If we wanted to add more than one prop, we simply separate them with a space. As
 Props are used to determine what the component renders and how it renders it, for example what colour it should be, whether parts are disabled etc.
 
 **[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/gitpod-react/tree/b7e7da047b80911501e57d6dfb9ae090ad4c5dee/my-app/src)**
+
+---
+
+## Lesson 8 - Class Components
+
+The outcome of these lessons, creating my first react app, are stored in the **[my-first-react-app](my-first-react-app/)** folder.
+
+In the previous lesson, we created a stateless Functional Component - this is a component that doesn't keep track of anything internal to themselves, and always render the same thing whether or not they include props, and once rendered, cannot change unless they are given new props.
+
+Stateful Class Components however are able to maintain their own private internal set of properties which describe what to display and how to behave. These properties are maintained in the state object, and can be updated in response to user interactions (like clicking a button, moving the mouse or typing on the keyboard). Stateful components are also able to take props like functional components, however these props act in the same way as they do in a functional component, in that once the component is rendered the props cannot be changed. State however, can be updated and changed at will which makes them more dynamic and flexible compared to stateless components.
+
+To create a class component, we will first need to import React and then create the class using the class keyword followed by the name of the component. We will also need to add extends React.Component to convert this from a JavaScript class to a React Class. Then within the component we will need to define the render method to allow us to return the jsx that we place inside of it.
+
+Passing a prop into a stateful class component is slightly different - we will need to use the this keyword to allow access to the prop - `this.props.greeting`. Like functional components we can pass as many props into a class component as we want, we just need to separate them with a space.
+
+**[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/react-essentials/tree/b7e7da047b80911501e57d6dfb9ae090ad4c5dee/my-app/src)**
+
+---
+
+## Lesson 9 - What is State?
+
+The outcome of these lessons, creating my first react app, are stored in the **[my-first-react-app](my-first-react-app/)** folder.
+
+In class components, the state is usually defined in a contructor. First we need to add the `super();` function as this allows us to use the constructor from the parent class, and in this case we want to make sure that React.Component is called. 
+
+Next we can define the state using `this.state = {}` we start by defining the state as an empty object, so that as soon as the class is instantiated, we are able to access and manipulate the state. Its best practice to pass the props through the constructor and the super functions so that props passed through to the component are also passed through when calling super.
+
+Next we will give our state object some values which are called the initial state. They will represent the initial values of anything the component changes on its own or due to user interaction. We can add as many state properties as we want in the constructor.
+
+
+*Mutable state*: Mutable means it can change - so the state is changable.
+
+We need to add parentheses to the return as we will be returning more than one line of code, and also wrap our jsx with a div, as react will only return one element from a render.
+
+**[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/react-essentials/tree/c0a87c4ebf709508e7c48d2a1f0006abc74a3974/my-app/src)**
 
 ---
