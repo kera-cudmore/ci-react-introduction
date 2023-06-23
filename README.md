@@ -11,6 +11,9 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 * [Lesson 5: React components](#lesson-5---react-components)
 * [Lesson 6: Functional components](#lesson-6---functional-components)
 * [Lesson 7: Props](#lesson-7---props)
+* [Lesson 8: Class Components](#lesson-8---class-components)
+* [Lesson 9: What is State?](#lesson-9---what-is-state)
+* [Lesson 10: Updating the State](#lesson-10---updating-the-state)
 
 ---
 
