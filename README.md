@@ -263,3 +263,31 @@ We need to add parentheses to the return as we will be returning more than one l
 **[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/react-essentials/tree/c0a87c4ebf709508e7c48d2a1f0006abc74a3974/my-app/src)**
 
 ---
+
+## Lesson 10 - Updating the State
+
+To make the button functional, allowing it to update the state of the StatefulGreeting component we will need to do the following:
+
+* Give the button an `onClick` attribute
+* Write an event handler method to listen for the `onClick` event
+* Within the handler, use a `setState` method to update the state
+
+You may notice in the console that when we click the button the greeting logged to the console is the old state rather than the new changed state, even though the new state is being rendered correctly in the component. This is happening because the values you see in the console are the values the state had just before the button was clicked.
+
+`setState` is an *asynchronous function*. this means that its capable of functioning in the background while other code continues executing.
+
+*callback functions* are executed only once the code in an asynchronous function completes.
+
+The reason why it console logs like this is because calls to `setState` are asynchronous, so it is executing in the background while the rest of the code continues to execute. This means that the `console.log` are actually executing *before* the state update happens, so the values logged are the values that were in the state before `setState` was called.
+
+To resolve this there is a second from of the `useState` method we can use, which takes a *callback function* as the second parameter. The callback function will always execute after the `setState` has finished.
+
+*Note:* This type of callback function is what is used when using fetch API. As fetch can take time to go out and make the request or download data, a callback function is passed to it to rely on the fetch completing, and once it does the callback function would execute.
+
+The callback function we are going to pass to `setState` functions in the same way.
+
+So any time we work with `setState` and need to run some code after the state update is complete we need to place the code in a callback function as a second parameter to the `setState` **NOT** immediately after the `setState` call, as doing so would make the code execute before the state update is completed. By placing the code as a callback function to the `setState` method we guarantee our code will always execute after the state is complete.
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/cd06dfa8607fe31644d4980f9beb55f5d4eca23c)**
+
+**[Updating the State Cheet Sheet](documentation/Updating-the-State-Cheat-Sheet.pdf)**
