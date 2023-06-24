@@ -320,3 +320,11 @@ Sometimes these types of issues don't become obvious until you use more complex 
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/cd06dfa8607fe31644d4980f9beb55f5d4eca23c)**
 
 **[Updating the State Cheet Sheet](documentation/Updating-the-State-Cheat-Sheet.pdf)**
+
+## ES7 Snippets
+
+We will be using an extension for ES7 snippets, [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+* [ES7 Snippets Cheat Sheet](https://docs.google.com/document/d/1QtCwh_CcgXwbrHcGP4hlpOi37vylxurn-x4BznhbkBA/edit)
+
+* [Examples of ES7 Snippets](ES7Snippets.js)
