@@ -291,6 +291,8 @@ The callback function we are going to pass to `setState` functions in the same w
 
 So any time we work with `setState` and need to run some code after the state update is complete we need to place the code in a callback function as a second parameter to the `setState` **NOT** immediately after the `setState` call, as doing so would make the code execute before the state update is completed. By placing the code as a callback function to the `setState` method we guarantee our code will always execute after the state is complete.
 
+**[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/react-1-18-49/tree/4329ab8b6d1cc8270eac7a01ceb9856854f99dda)**
+
 ### Setting State - the wrong way
 
 To determine the current value of the introduction text and button text, to allow us to update the state dependant on their values we can use a ternary conditional statement in the setState method:
@@ -305,9 +307,15 @@ This way will however have an issue in more complex cases. We've added an increm
 
 Rather than incrementing the count by 5 each click, we are only incrementing by one and the value is being logged 5 times in the console. This is happening because React groups multiple calls to setState into a single call for better performance, which means our 5 calls to setState are being grouped into one single call to prevent the component rerendering 5 times, and only rerenders once on the final call to this.increment.
 
+**[Finished Source Code Repo](https://github.com/Code-Institute-Solutions/react-1-18-49/tree/a2350d8eba7621c34d74a3d7b1546ffc331d0869)**
+
 ### Setting State - the right way
 
+When dealing with state updates that depend on the previous state of the component, there is a third  form of the setState method that must be used.
 
+This takes a function as the first parameter to setState. The function can take two parameters, the previous state, and the previous props. It returns an object that will be used to create the new state. We then will return the state.
+
+Sometimes these types of issues don't become obvious until you use more complex code. Because of this it is really important to follow best practices when using setState to prevent strange problems that can be difficult to debug.
 
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/cd06dfa8607fe31644d4980f9beb55f5d4eca23c)**
 
