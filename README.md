@@ -291,6 +291,24 @@ The callback function we are going to pass to `setState` functions in the same w
 
 So any time we work with `setState` and need to run some code after the state update is complete we need to place the code in a callback function as a second parameter to the `setState` **NOT** immediately after the `setState` call, as doing so would make the code execute before the state update is completed. By placing the code as a callback function to the `setState` method we guarantee our code will always execute after the state is complete.
 
+### Setting State - the wrong way
+
+To determine the current value of the introduction text and button text, to allow us to update the state dependant on their values we can use a ternary conditional statement in the setState method:
+
+```js
+    introduction: this.state.introduction === "Hello!" ? "Goodbye!" : "Hello!",
+```
+
+This ternary conditional statement means if the introduction is hello it will change to goodbye, otherwise it will change to hello.
+
+This way will however have an issue in more complex cases. We've added an increment button that adds one each time the button is clicked, which works, but when we add a method to increment 5 each time the button is clicked we hit an issue.
+
+Rather than incrementing the count by 5 each click, we are only incrementing by one and the value is being logged 5 times in the console. This is happening because React groups multiple calls to setState into a single call for better performance, which means our 5 calls to setState are being grouped into one single call to prevent the component rerendering 5 times, and only rerenders once on the final call to this.increment.
+
+### Setting State - the right way
+
+
+
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/cd06dfa8607fe31644d4980f9beb55f5d4eca23c)**
 
 **[Updating the State Cheet Sheet](documentation/Updating-the-State-Cheat-Sheet.pdf)**
