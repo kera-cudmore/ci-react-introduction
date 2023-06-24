@@ -14,6 +14,8 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 * [Lesson 8: Class Components](#lesson-8---class-components)
 * [Lesson 9: What is State?](#lesson-9---what-is-state)
 * [Lesson 10: Updating the State](#lesson-10---updating-the-state)
+* [ES7 Snippets](#es7-snippets)
+* [Lesson 11: Handling Events in React](#lesson-11---handling-events-in-react)
 
 ---
 
@@ -321,6 +323,8 @@ Sometimes these types of issues don't become obvious until you use more complex 
 
 **[Updating the State Cheet Sheet](documentation/Updating-the-State-Cheat-Sheet.pdf)**
 
+---
+
 ## ES7 Snippets
 
 We will be using an extension for ES7 snippets, [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
@@ -328,3 +332,24 @@ We will be using an extension for ES7 snippets, [ES7+ React/Redux/React-Native s
 * [ES7 Snippets Cheat Sheet](https://docs.google.com/document/d/1QtCwh_CcgXwbrHcGP4hlpOi37vylxurn-x4BznhbkBA/edit)
 
 * [Examples of ES7 Snippets](ES7Snippets.js)
+
+---
+
+## Lesson 11 - Handling Events in React
+
+All web applications respond to user interactions, and in React we can use these interactions to update our components. To do this we capture events such as clicks, mouse movements, scrolling, key presses and more as the user uses our application.
+
+In React, most event handlers are named the same as their html counterparts, however in React they are camel cased - so onclick becomes onClick, onmouseover becomes onMouseOver etc.
+
+To capture a click event on our button in EventFunctional.js we need to add an `onClick` attribute to the button. All events in React are passed to theri elements as JSX attributes (like our onClick) and the values are specified within curly braces. Within the curly braces we will pass a function called clickHandler which is called when the button is clicked. Its important that we don't include the parentheses after the clickHandler when passing it, as we want to pass the function itself, not a call to the function, as the event handler. Next we will define the clickHandler function. This needs to be defined within the component, it will not work if it is outside.
+
+The process is fairly similar for adding an event handler to a class component, however we don't need to use the function keyword because we'll be defining the handler as a method on the class, and when passing the handler to the onClick attribute we will need to add the `this` keyword.
+
+The process is the same for the different event types, and you can pass as many as you want.
+
+### Additional Reading
+
+* [React docs: How to handle Events](https://reactjs.org/docs/handling-events.html)
+* [React Docs: List of Events](https://reactjs.org/docs/events.html)
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/56070a8f25799a03a44c55666d7b92af8d2d5803)**
