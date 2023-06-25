@@ -16,6 +16,7 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 * [Lesson 10: Updating the State](#lesson-10---updating-the-state)
 * [ES7 Snippets](#es7-snippets)
 * [Lesson 11: Handling Events in React](#lesson-11---handling-events-in-react)
+* [Lesson 12: Binding Events for State Updates](#lesson-12-binding-events-for-state-updates)
 
 ---
 
@@ -353,3 +354,29 @@ The process is the same for the different event types, and you can pass as many 
 * [React Docs: List of Events](https://reactjs.org/docs/events.html)
 
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/56070a8f25799a03a44c55666d7b92af8d2d5803)**
+
+---
+
+## Lesson 12: Binding Events for State Updates
+
+Binding event handlers is a method of properly connecting your event handlers to your React components.
+
+If we compare EventsClass.js and StatefulGreeting.js when the button is clicked we can see in EventClass component the component itself doesn't change as its just logging the value to the console. However in the StatefulGreeting component the button triggers a state update, which requires us to use an arrow function in the onClick attribute of that component.
+
+If we remove the arrow function from the onClick event, when we click the button we will get an error *Uncaught TypeError: Cannot read properties of undefined (reading 'setState')*. This is telling us that the `this` keyword in our event handler is undefined. We need the this keyword to refer to the component we've created, since, as an extension of the component class from react it is the only way we can access the setState method. In JavaScript classes, methods are not automatically bound to the class itself, so as in the example above, unless we manually bind the method to the class, the `this` keyword will be undefined. So this is why in class components we need to bind the event handler to the class, as without doing so we cannot use `this.setState` as this is undefined.
+
+There are 4 different ways we can bind an event handler:
+
+1. Use an arrow function in the render method. By using an arrow function we ensure that `this` is bound to the class, as arrow functions execute in the scope in which they're created (in our example the react component). When we use an arrow function, we use parentheses after the function as we want to return a call to the function. This is like saying I want to create the function on the spot which will then return a call to the event handler.
+
+2. Set the binding method on the event handler and pass in `this`. As `this` is outside the context of the event handler, it refers to the class, so is saying that the `this` in the handleClick method to refer to the `this` from the class.
+
+3. Bind the event handler in the constructor. In the constructor, we can set `this.handleClick = this.handleClick.bind(this)` which connects the `this` in the event handler to the `this` in the class. By performing this in the constructor, it will only happen once rather than on each render, which can be better for performance in larger applications.
+
+4. Bind when defining the event handler as an arrow function. If we change the event handler to an arrow function we can keep the button as before. This works due to arrow functions adopting the `this` from wherever they are defined, which in this example is the class component.
+
+So which method is the best? That will depend on the application. There will be performance implications for all the methods. For most cases though either defining an arrow function in the render method or defining the event handler as an arrow function will be the best options.
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/1fd02fe3cfdd2e117138c6728b8cd8bcc76111d6)**
+
+* [Binding Events Cheat Sheet](https://docs.google.com/document/d/1r7C6VtLiVtE54obMbhLU4z4fyzGPrCzxiLrcaqG4jT4/edit?usp=sharing)
