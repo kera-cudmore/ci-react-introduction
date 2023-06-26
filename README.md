@@ -380,3 +380,33 @@ So which method is the best? That will depend on the application. There will be 
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/1fd02fe3cfdd2e117138c6728b8cd8bcc76111d6)**
 
 * [Binding Events Cheat Sheet](https://docs.google.com/document/d/1r7C6VtLiVtE54obMbhLU4z4fyzGPrCzxiLrcaqG4jT4/edit?usp=sharing)
+
+---
+
+## Lesson 13: Conditional Rendering
+
+Conditional rendering lets a React component show different elements based on whetehr a certain condition is met. For example if we had a menu component that renders a different menu depending on whether or not a user is logged in, so if the user is logged in they are shown the dashboard, and if they are not logged in they are shown the signup form. Or you may display a loading icon while a chart component is loading data and then display the data once it has loaded.
+
+You can think of this a little like an if statement in our render method. We can achieve this by using a ternary conditional statement: `this.state.isLoggedIn ? ... : ...` If the statement is true, the first condition will be rendered, else it will render the second.
+
+If you need to conditionally render multiple lines of code, you can simply wrap the parts of your ternary conditional in parentheses: `this.state.isLoggedIn ? () : ()`
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/65ad80842c25bb38e60e00ebecca8da407ded596)**
+
+---
+
+## Lesson 14: Nesting Components
+
+Nesting components allows us to create more complex user interfaces in React.
+
+Generally it is best to keep your React components as small and as simple as possible. Each comoponent should be as isolated and reusable as possible so that you can reuse it in other parts of your application or in completely different applications. Each component should also only be used for one or two things at most. By doing this, if anything were to go wrong in your components, the issue will most likely be isolated to just that component and shouldn't break the rest of the application.
+
+We can break down our NestingComponent to have two children components, UserData and UserMessage. As these components will just be displaying static information, won't change once they're rendered and don't have any interactivity, they can be created as functional components. The state will be managed in the parent component, NestedComponents, and the values for the children will be passed in as props from the parent component. Because of this the children are functional components, but the parent component must remain as a class component.
+
+The only change to our previous message code we need to make is to change the `this.state.isLoggedIn` to `props.isLoggedIn`. This is because we don't have the state defined in the functional component, but rather it is being passed from the parent component via the props.
+
+You can pass more than one prop to the children component, or pass to more than one component.
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/53af0dd2d3b1ce1f81f18c2e20e7fcd8f1f643f4)**
+
+---
