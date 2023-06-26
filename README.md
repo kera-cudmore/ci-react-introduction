@@ -410,3 +410,35 @@ You can pass more than one prop to the children component, or pass to more than 
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/53af0dd2d3b1ce1f81f18c2e20e7fcd8f1f643f4)**
 
 ---
+
+## Lesson 15: Methods as props
+
+We can also update the parent from the child, by passing a method (an event handler) from the parent to the child, which will allow updating the parent from the child.
+
+One of the design specifications of React is that data should only flow down in the DOM tree, so from the parent to the child. There are some situations however where we may want to update the state of a parent component from one of its children, maybe in order to force it to pass new props down to a different child.
+
+To do this we could create a button in the parent component and write a click handler. This would work, but the button should really be part of the child, as it would be part of whats rendered depending on whether the user is signed in, so it should be rendered along with the please sign in message, based on the props that are passed in.
+
+We can do this by creating the button in the child component, and then creating the event handler in the parent and passing this down to the child as a prop. Remember that we don't need the parentheses at the end as we are just passing the function down to the child through the prop rather than calling it.
+
+We will then need to add an onClick to the button in the child. When we click the button we can see in the console that the function is being called from the parent component and the state is being updated. This means that we are calling out from the child to change things in the parent, and means we can cause other children to rerender.
+
+
+![Methods as props console log](documentation/methods-as-props-consolelog.png)
+
+Passing methods as props is a common way to handle updating the state of a parent component from a child, however if you find yourself doing this a lot, it could be an indication that there could be a better way to do things. For example one alternative would be to make the child component stateful and then define the sign in and sign out functionality there instead to keep the component completely independent of the parent as the child component would no longer be reliant on the parents state. It is always good to know all the different ways to solve a problem.
+
+We could also refine the code and have one method that handles the sign in and sign out onClick event:
+
+```js
+// single method that handles both SignIn and SignOut
+  toggleIsLoggedIn = () => {
+    this.setState((prevState) => ({
+      isLoggedIn: !prevState.isLoggedIn,
+    }));
+  };
+```
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/0d3c00aa759f8b5da8d59600b012bad33ed20e61)**
+
+---
