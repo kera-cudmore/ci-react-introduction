@@ -17,6 +17,10 @@ Official documentation for Reactjs: [reactjs.org](https://reactjs.org/)
 * [ES7 Snippets](#es7-snippets)
 * [Lesson 11: Handling Events in React](#lesson-11---handling-events-in-react)
 * [Lesson 12: Binding Events for State Updates](#lesson-12-binding-events-for-state-updates)
+* [Lesson 13: Conditional Rendering](#lesson-13-conditional-rendering)
+* [Lesson 14: Nesting Components](#lesson-14-nesting-components)
+* [Lesson 15: Methods as Props](#lesson-15-methods-as-props)
+* [Lesson 16: Rendering Lists](#lesson-16-rendering-lists)
 
 ---
 
@@ -442,3 +446,37 @@ We could also refine the code and have one method that handles the sign in and s
 **[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/0d3c00aa759f8b5da8d59600b012bad33ed20e61)**
 
 ---
+
+### Lesson 16: Rendering Lists
+
+Because React relies heavily on JavaScript, we can use the `map()` method to be able to iterate over an array of items or objects and its properties. We can also use the map method to execute a function on each item, and return a new array with those modified items.
+
+An example of this would be an array of books, which we could use the map method to wrap each item in some html.
+
+React often uses map to create ordered and unordered lists, table rows and cells, and rows and columns in a bootstrap grid, as anything repetitive within html can be rendered. The Map method is like a cooler version of a for loop.
+
+```javascript
+{bookList.map(book => {
+    return <h2>{book}</h2>
+})}
+```
+
+We can also use the map method on more complex arrays that contain objects. When can inject the values from the object using javascript dot notation:
+
+```javascript
+{
+    books.map(book => {
+        return (
+        <div>
+            <h5>{book.title}</h5>
+            <p>{book.author}</p>
+            <p>{book.pages}</p>
+        </div>
+        )
+    })
+}
+```
+
+We can also extract this piece of code we've just written into its own component, <Book />
+
+**[Finished Source Code Repo](https://github.com/mr-fibonacci/react-1-18-49/tree/78525362a448c4c76545bbcbf67ae6c1f771c26a)**
